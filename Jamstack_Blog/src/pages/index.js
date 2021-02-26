@@ -1,6 +1,76 @@
-import React from "react"
+import React from "react";
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-export default () => {
+export const query = graphql`
+query {
+  hero: file(relativePath: {eq: "hero-img.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 1280) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample1: file(relativePath: {eq: "sample1.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample2: file(relativePath: {eq: "sample2.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample3: file(relativePath: {eq: "sample3.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample4: file(relativePath: {eq: "sample4.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample5: file(relativePath: {eq: "sample5.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample6: file(relativePath: {eq: "sample6.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample7: file(relativePath: {eq: "sample7.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  sample8: file(relativePath: {eq: "sample8.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 320, maxHeight: 200) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+}
+`
+
+export default ({data}) => {
   return <div className="wrapper">
   <header id="header">
     <nav className="nav">
@@ -22,7 +92,9 @@ export default () => {
   </header>
   <main id="main">
     <div className="hero">
-      <div className="hero__img"><img src="/img/hero-img.jpg" /></div>
+      <div className="hero__img">
+        <Img fluid={data.hero.childImageSharp.fluid} alt="" />
+      </div>
       <div className="hero__text">
         <h2 className="hero__text__main">Hero Title</h2>
         <p className="hero__text__sub">ブログについて書いています。ここにはブログの説明など簡単な説明が入ります。何か伝えたいことがあればここに書くとよいのではないでしょうか</p>
@@ -42,7 +114,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample1.jpg" height="150px" />
+                <Img fluid={data.sample1.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -54,7 +126,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample2.jpg" height="150px" />
+                <Img fluid={data.sample2.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -66,7 +138,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample3.jpg" height="150px" />
+                <Img fluid={data.sample3.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -78,7 +150,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample4.jpg" height="150px" />
+                <Img fluid={data.sample4.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -90,7 +162,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample5.jpg" height="150px" />
+                <Img fluid={data.sample5.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -102,7 +174,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample6.jpg" height="150px" />
+                <Img fluid={data.sample6.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -114,7 +186,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample7.jpg" height="150px" />
+                <Img fluid={data.sample7.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -126,7 +198,7 @@ export default () => {
             <li className="content">
               <a href="#">
                 <div className="content__img">
-                  <img src="/img/sample8.jpg" height="150px" />
+                <Img fluid={data.sample8.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="content__text">
                   <p>2020/08/08</p>
@@ -172,7 +244,7 @@ export default () => {
             <li className="popular__post">
               <a href="#">
                 <div className="popular__post__img">
-                  <img src="/img/sample1.jpg" width="100px" height="100px" />
+                  <Img fluid={data.sample1.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="popular__post__text">
                   <p className="popular__post__text__title">人気投稿1。これは人気投稿です。</p>
@@ -183,7 +255,7 @@ export default () => {
             <li className="popular__post">
               <a href="#">
                 <div className="popular__post__img">
-                  <img src="/img/sample2.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample2.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="popular__post__text">
                   <p className="popular__post__text__title">人気投稿2。これは人気投稿です。</p>
@@ -194,7 +266,7 @@ export default () => {
             <li className="popular__post">
               <a href="#">
                 <div className="popular__post__img">
-                  <img src="/img/sample3.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample3.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="popular__post__text">
                   <p className="popular__post__text__title">人気投稿3。これは人気投稿です。</p>
@@ -205,7 +277,7 @@ export default () => {
             <li className="popular__post">
               <a href="#">
                 <div className="popular__post__img">
-                  <img src="/img/sample4.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample4.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="popular__post__text">
                   <p className="popular__post__text__title">人気投稿4。これは人気投稿です。</p>
@@ -304,7 +376,7 @@ export default () => {
             <li className="main-footer__recent__item">
               <a href="#">
                 <div className="main-footer__recent__item__img">
-                  <img src="/img/sample1.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample1.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="main-footer__recent__item__text">
                   <p className="main-footer__recent__item__text__title">最近の投稿1。これは最近の投稿です</p>
@@ -315,7 +387,7 @@ export default () => {
             <li className="main-footer__recent__item">
               <a href="#">
                 <div className="main-footer__recent__item__img">
-                  <img src="/img/sample2.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample2.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="main-footer__recent__item__text">
                   <p className="main-footer__recent__item__text__title">最近の投稿2。これは最近の投稿です</p>
@@ -326,7 +398,7 @@ export default () => {
             <li className="main-footer__recent__item">
               <a href="#">
                 <div className="main-footer__recent__item__img">
-                  <img src="/img/sample3.jpg" width="100px" height="100px" />
+                <Img fluid={data.sample3.childImageSharp.fluid} alt="" />
                 </div>
                 <div className="main-footer__recent__item__text">
                   <p className="main-footer__recent__item__text__title">最近の投稿3。これは最近の投稿です</p>
