@@ -15,6 +15,8 @@ body {
 }
 .nav__title {
   text-align: center;
+  white-space: nowrap;
+  letter-spacing: 5px;
 }
 
 @media screen and (min-width: 600px) {
@@ -80,6 +82,7 @@ body {
 
 .hero__img {
   background-color: #f0d0d0;
+  height: 450px;
 }
 
 @media screen and (min-width: 1024px) {
