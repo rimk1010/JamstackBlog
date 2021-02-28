@@ -187,7 +187,26 @@ body {
     margin-right: 20px;
   }
 }
-
+.main-page {
+  background-color: white;
+  flex: 2;
+}
+@media screen and (min-width: 1024px) {
+  .main-page {
+    margin-right: 40px;
+  }
+}
+.main-about-container {
+  padding: 1rem;
+}
+.about-title {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  border-left: 4px solid black;
+}
+.about-text {
+  font-size: 1rem;
+}
 .tab-container {
   margin-bottom: 50px;
 }
